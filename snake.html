@@ -82,11 +82,8 @@
     </style>
 </head>
 <body>
-    <div class = "Eda"> <img src="cruelty_free_FILL1_wght400_GRAD0_opsz48.svg" alt="" width="40">
-    </div>
-    <div class = "snake"> <img src="snake.png" alt="" width="30px" height="30px" >
-    </div>
-
+    <div class = "Eda"> <img src="cruelty_free_FILL1_wght400_GRAD0_opsz48.svg" alt="" width="40"></div>
+    <div class = "snake"> <img src="snake.png" alt="" width="30px" height="30px" ></div>
         <div class = "hvost1" hidden = "true"> 
         </div>
         <div class = "hvost2" hidden = "true"> 
@@ -95,11 +92,7 @@
         </div>
         <div class = "hvost4" hidden = "true"> 
         </div>
-        <!-- <div class="modal" hidden = "true">
-            <p>Game over! Начать новую игру?<p>
-            <button class="btnYes" onclick="location.reload();">Начать</button> 
-            <button class="btnNo" onclick="window.close();">Закрыть окно</button> </div>
-        <div ><a href="https://www.flaticon.com/ru/free-icons/" title="фауна иконки" class= "prava">Фауна иконки от juicy_fish - Flaticon</a></div> -->
+        
     <script>
         // рандомное появление Еды
         alert("Начать новую игру?")
@@ -112,6 +105,7 @@
         let key = "ArrowUp";
         let Arrow= "+";
         let m=0
+        
         //Расположение хвоста первые координаты
         snake =document.getElementsByClassName("snake")[0]
         let x =snake.offsetTop
@@ -240,17 +234,12 @@
             location.reload()
             }
 
-
         function getRandom(min, max) {
 			return Math.round(Math.random() * (max - min) + min);
 			}   
     </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
-    
-
-
 
 </body>
 </html>
