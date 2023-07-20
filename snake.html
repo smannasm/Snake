@@ -46,12 +46,7 @@
         border-radius: 20%;
         position: absolute;
     }
-    /* .Eda{
-        width :1rem;
-        height: 1rem;
-        background-color: black;
-        position: absolute;
-    } */
+
 .Eda{
   font-variation-settings:
   'FILL' 1,
@@ -62,16 +57,36 @@
 }
 .prava{
     color: white;
+    font-size: 0%;
 }
+.modal{
+    height: 150px;
+    width: 300px;
+    background-color: white;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    z-index: 1;
+    padding-top: 15px;
+    text-align: center;
+    border: 2px solid blue;
+    box-shadow: 10px 5px 5px grey;
+}
+    .btnYes{
+    position: relative;
+    }
+    .btnNo{
+    position: relative;
+    }
 
     </style>
 </head>
 <body>
-   <div class = "Eda"> <img src="cruelty_free_FILL1_wght400_GRAD0_opsz48.svg" alt="" width="40">
-   </div>
+    <div class = "Eda"> <img src="cruelty_free_FILL1_wght400_GRAD0_opsz48.svg" alt="" width="40">
+    </div>
     <div class = "snake"> <img src="snake.png" alt="" width="30px" height="30px" >
-        
-        </div>
+    </div>
+
         <div class = "hvost1" hidden = "true"> 
         </div>
         <div class = "hvost2" hidden = "true"> 
@@ -80,16 +95,20 @@
         </div>
         <div class = "hvost4" hidden = "true"> 
         </div>
-        <div ><a href="https://www.flaticon.com/ru/free-icons/" title="фауна иконки" class= "prava">Фауна иконки от juicy_fish - Flaticon</a></div>
+        <!-- <div class="modal" hidden = "true">
+            <p>Game over! Начать новую игру?<p>
+            <button class="btnYes" onclick="location.reload();">Начать</button> 
+            <button class="btnNo" onclick="window.close();">Закрыть окно</button> </div>
+        <div ><a href="https://www.flaticon.com/ru/free-icons/" title="фауна иконки" class= "prava">Фауна иконки от juicy_fish - Flaticon</a></div> -->
     <script>
         // рандомное появление Еды
-        
+        alert("Начать новую игру?")
         let topEda = getRandom(0, window.innerHeight-40)
 		let leftEda = getRandom(0, window.innerWidth - 40);
         let Eda = document.getElementsByClassName("Eda")[0]
         Eda.style.top = topEda+"px";
         Eda.style.left = leftEda+"px";
-        
+
         let key = "ArrowUp";
         let Arrow= "+";
         let m=0
@@ -132,13 +151,14 @@
         })
 
         function go() {
+        gostop: {
         setInterval(function(index){
         console.log("a");
         pereopredelenieSnake();
         m=m+300
 
         //game over
-        if (snake.offsetTop+15>window.innerHeight){dead();}
+        if (snake.offsetTop+15>window.innerHeight){dead()};
         if (snake.offsetTop<0){dead();}
         if (snake.offsetLeft+8>window.innerWidth){dead();}
         if (snake.offsetLeft<0){dead();}
@@ -168,7 +188,7 @@
                 hvost3.hidden=false} else if (hvost4.hidden==true){
                 hvost4.hidden=false}
                 }
-            },500+m)}
+            },500+m)}}
 
         function pereopredelenieSnake(){
         if (key == "ArrowLeft") {
@@ -217,12 +237,7 @@
         }
         
         function dead (){
-            d =confirm("Game Over! Начать новую игру?")
-            if (d== true) {
-            location.reload();
-            } else if (d == false){
-            window.close();
-            }
+            location.reload()
             }
 
 
