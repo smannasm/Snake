@@ -97,7 +97,7 @@
         // рандомное появление Еды
         alert("Начать новую игру?")
         let topEda = getRandom(0, window.innerHeight-40)
-		let leftEda = getRandom(0, window.innerWidth - 40);
+	let leftEda = getRandom(0, window.innerWidth - 40);
         let Eda = document.getElementsByClassName("Eda")[0]
         Eda.style.top = topEda+"px";
         Eda.style.left = leftEda+"px";
@@ -140,15 +140,15 @@
 		};
 
         document.addEventListener("keydown", function(event){
-        key = event.key;
-        go();
+        	key = event.key;
+        	go();
         })
 
         function go() {
         gostop: {
         setInterval(function(index){
-        console.log("a");
         pereopredelenieSnake();
+	// Уменьшает скорость Змейки
         m=m+300
 
         //game over
