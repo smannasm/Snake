@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
     <title>Snake</title>
     <style>
         /* Змея ползет */
@@ -97,7 +97,7 @@
         // рандомное появление Еды
         alert("Начать новую игру?")
         let topEda = getRandom(0, window.innerHeight-40)
-	let leftEda = getRandom(0, window.innerWidth - 40);
+		let leftEda = getRandom(0, window.innerWidth - 40);
         let Eda = document.getElementsByClassName("Eda")[0]
         Eda.style.top = topEda+"px";
         Eda.style.left = leftEda+"px";
@@ -110,9 +110,7 @@
         snake =document.getElementsByClassName("snake")[0]
         let x =snake.offsetTop
         let koordTop=[snake.offsetTop, snake.offsetTop, snake.offsetTop, snake.offsetTop, snake.offsetTop,];
-        console.log(koordTop);
         let koordLeft=[snake.offsetLeft, snake.offsetLeft, snake.offsetLeft, snake.offsetLeft, snake.offsetLeft];
-        console.log(koordLeft);
 
         hvost1 =document.getElementsByClassName("hvost1")[0];
         hvost2 =document.getElementsByClassName("hvost2")[0];
@@ -120,19 +118,15 @@
         hvost4 =document.getElementsByClassName("hvost4")[0];
 
         hvost1.style.top=(koordTop[1])+"px";
-        console.log(hvost1.offsetTop);
         hvost1.style.left=(koordLeft[1])+"px";
 
         hvost2.style.top=koordTop[2]+"px";
-        console.log(hvost2.offsetTop);
         hvost2.style.left=koordLeft[2]+"px";
 
         hvost3.style.top=koordTop[3]+"px";
-        console.log(hvost3.offsetTop);
         hvost3.style.left=koordLeft[3]+"px";
 
         hvost4.style.top=koordTop[4]+"px";
-        console.log(hvost4.offsetTop);
         hvost4.style.left=koordLeft[4]+"px";
 
         snake.ondragstart = function () {
@@ -140,15 +134,14 @@
 		};
 
         document.addEventListener("keydown", function(event){
-        	key = event.key;
-        	go();
+        key = event.key;
+        go();
         })
 
         function go() {
         gostop: {
         setInterval(function(index){
         pereopredelenieSnake();
-	// Уменьшает скорость Змейки
         m=m+300
 
         //game over
@@ -209,24 +202,18 @@
         function pereopredelenieHvost (){
         // добавление новых координат в массив
             koordTop.unshift(snake.offsetTop);
-            console.log(koordTop);
-            koordLeft.unshift(snake.offsetLeft);
-            console.log(koordLeft);   
+            koordLeft.unshift(snake.offsetLeft);  
         // раздача коордиинат хвосту
             hvost1.style.top=koordTop[1]+"px";
-            console.log(hvost1.offsetTop);
             hvost1.style.left=koordLeft[1]+"px";
 
             hvost2.style.top=koordTop[2]+"px";
-            console.log(hvost2.offsetTop);
             hvost2.style.left=koordLeft[2]+"px";
 
             hvost3.style.top=koordTop[3]+"px";
-            console.log(hvost3.offsetTop);
             hvost3.style.left=koordLeft[3]+"px";
 
             hvost4.style.top=koordTop[4]+"px";
-            console.log(hvost4.offsetTop);
             hvost4.style.left=koordLeft[4]+"px";
         }
         
